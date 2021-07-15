@@ -1,6 +1,6 @@
 # Automovil-Concesionaria
 
-# springboot-sample-app
+# Concesionaria Project development Java with Spring Boot
 
 [![Build Status](https://travis-ci.org/codecentric/springboot-sample-app.svg?branch=master)](https://travis-ci.org/codecentric/springboot-sample-app)
 [![Coverage Status](https://coveralls.io/repos/github/codecentric/springboot-sample-app/badge.svg?branch=master)](https://coveralls.io/github/codecentric/springboot-sample-app?branch=master)
@@ -24,9 +24,9 @@ There are several ways to run a Spring Boot application on your local machine. O
 mvn spring-boot:run
 ```
 
-## Deploying the application to OpenShift
+## Accces in console H2
 
-The easiest way to deploy the sample application to OpenShift is to use the [OpenShift CLI](https://docs.openshift.org/latest/cli_reference/index.html):
+for visit the page and view of the data base, ingresar a  [OpenShift CLI](https://localhost:port/h2-console):
 
 ```shell
 oc new-app codecentric/springboot-maven3-centos~https://github.com/codecentric/springboot-sample-app
