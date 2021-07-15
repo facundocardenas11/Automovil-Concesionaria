@@ -43,13 +43,16 @@ This will create:
 
 If you want to access the code, you have  springboot service:
 
-```git clone https://github.com/facundocardenas11/Automovil-Concesionaria.git
+```shell
+git clone https://github.com/facundocardenas11/Automovil-Concesionaria.git
 ```
 
-```cd Automovil-Concesionaria
+```shell
+cd Automovil-Concesionaria
 ```
 
-```git pull
+```shell
+git pull
 ```
 
 ## Copyright
