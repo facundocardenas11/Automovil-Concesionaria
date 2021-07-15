@@ -15,20 +15,17 @@ import com.sysone.app.SysOne.model.AutomovilModel;
 import com.sysone.app.SysOne.responses.AppResponse;
 
 @Repository
-public interface AutomovilRepository extends CrudRepository<Automovil, Long>{
-	
+public interface AutomovilRepository extends CrudRepository<Automovil, Long> {
+
 	Optional<Automovil> findById(Integer id);
-	
+
 	@Modifying
 	@Transactional
 	void deleteById(Long id);
 
-
 	AppResponse save(AutomovilModel model);
-	
-   @Query(value =
-	"SELECT * FROM AUTOMOVIL", 
-	nativeQuery = true)
+
+	@Query(value = "SELECT * FROM AUTOMOVIL", nativeQuery = true)
 	public List<AutomovilModel> stats();
 
 }

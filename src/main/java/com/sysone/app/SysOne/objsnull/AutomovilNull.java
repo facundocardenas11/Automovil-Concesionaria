@@ -5,6 +5,6 @@ import com.sysone.app.SysOne.model.AutomovilModel;
 public class AutomovilNull extends AutomovilModel {
 
 	public AutomovilNull() {
-		super("",0);
+		super("", 0);
 	}
 }

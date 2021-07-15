@@ -30,19 +30,14 @@ public class AutomovilController {
 	@Autowired
 	AutomovilService aService;
 
-	
 	@PostMapping("/add")
 	public ResponseEntity<AutomovilModel> agregarAuto(@RequestBody AutomovilModel model) {
-
-		AutomovilModel newModel = model.crearAutomovilModel();
-		Automovil entity = repo.save(newModel.toEntity());
-		newModel.setId(entity.getId());
-		return new ResponseEntity<AutomovilModel>(newModel, HttpStatus.OK);
+		return aService.addNewVehiculo(model);
 	}
 
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(value = "/listarAutos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Iterable<AutomovilModel> listarAutos() {
+	public List<AutomovilModel> listarAutos() {
 
 		return aService.listarAutos();
 	}
@@ -57,21 +52,14 @@ public class AutomovilController {
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(value = "/modificarAuto/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
 	public AppResponse modificarAuto(@RequestBody AutomovilModel model, @PathVariable Long id) {
-
-		
-			model.setModelo(model.getModelo());
-			model.setPrecio(model.getPrecio());
-			model.setOpcionales(model.getOpcionales());
-			model.setId(id);
-			return repo.save(model);
-		
+		return aService.modifyAuto(model, id);
 	}
+
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(value = "/stats", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<AutomovilModel> stats(){
-		
+	public List<AutomovilModel> stats() {
+
 		return aService.stats();
 	}
-	
 
 }
