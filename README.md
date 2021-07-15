@@ -24,9 +24,13 @@ There are several ways to run a Spring Boot application on your local machine. O
 mvn spring-boot:run
 ```
 
-## Accces in console H2
+## Accces console H2
 
-for visit the page and view of the data base, ingresar a  [OpenShift CLI](https://localhost:port/h2-console):
+If you want to access visit the page and view of the data base, acces in  :
+
+```
+https://localhost:port/h2-console
+```
 
 ```shell
 oc new-app codecentric/springboot-maven3-centos~https://github.com/codecentric/springboot-sample-app
@@ -34,16 +38,21 @@ oc new-app codecentric/springboot-maven3-centos~https://github.com/codecentric/s
 
 This will create:
 
-* A BuildConfig called "AutomovilController"
+* A Web Application called "AutomovilController"
 * Service called "AutomovilService"
 
-If you want to access the app from outside your OpenShift installation, you have to expose the springboot-sample-app service:
+If you want to access the code, you have  springboot service:
 
-```shell
-oc expose springboot-sample-app --hostname=www.example.com
+```git clone https://github.com/facundocardenas11/Automovil-Concesionaria.git
+```
+
+```cd Automovil-Concesionaria
+```
+
+```git pull
 ```
 
 ## Copyright
 
-Released under the Apache License 2.0. See the [LICENSE](https://github.com/codecentric/springboot-sample-app/blob/master/LICENSE) file.
+Spring Boot spring.io
 
